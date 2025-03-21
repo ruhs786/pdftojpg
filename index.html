@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Image Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Load pdf.js from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>PDF to Image Converter</h1>
+        <div class="upload-section">
+            <input type="file" id="pdfInput" accept=".pdf" onchange="handleFileUpload(event)">
+            <label for="pdfInput">Choose a PDF file</label>
+        </div>
+        <div class="options">
+            <label for="format">Image Format:</label>
+            <select id="format">
+                <option value="image/png">PNG</option>
+                <option value="image/jpeg">JPEG</option>
+                <option value="image/webp">WEBP</option>
+            </select>
+            <label for="dpi">DPI:</label>
+            <select id="dpi">
+                <option value="72">72 DPI</option>
+                <option value="150">150 DPI</option>
+                <option value="300">300 DPI</option>
+            </select>
+        </div>
+        <button id="convertBtn" onclick="convertPDF()" disabled>Convert</button>
+        <div id="preview" class="preview"></div>
+        <button id="downloadAll" onclick="downloadAllImages()" style="display: none;">Download All</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
